@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@sanity/client": "^2.23.2",
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^2.6.6",
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.1"
   }
 }
