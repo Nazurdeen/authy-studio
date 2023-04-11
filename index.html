@@ -1,73 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Netlify Auth & Sanity Data</title>
+  <title>A static website</title>
+
+  <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <script src="lib.js"></script>
 </head>
-<body class="logged-out">
-  <div class="app">
-    
-    <div class="grid">
-      <div class="netlify box">
-        <img class="logo" src="images/netlify.svg" alt="netlify icon">
-        <h2>Authenticate with Netlify</h2>
-        <div class="data-netlify" data-netlify-identity-menu></div>
+<body>
+  <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+  <div data-netlify-identity-menu></div>
 
-        <div class="nota">
-          *You really can sign up and create notes if you want to.  <br>All users and data will be deleted automatically every few days. 
-        </div>
-      </div>
-
-      <div class="sanity box">
-        <img class="logo" src="images/sanityicon.png" alt="sanity icon">
-        <h2 class="sanity-title">Read & Write to Sanity</h2>
-        
-        <div class="sanity-no-go">
-          <div>
-            <em style="color:silver">login on the left to access your data</em>
-          </div>
-        </div>
-
-        <div class="sanity-operations">
-          <input type="text" id="new-note" maxlength="40">
-          <button onclick="createUserNote()">add note</button>
-          <ul id="notes">
-            <!-- notes get rendered here -->
-          </ul>
-        </div>
-      </div>
-
-      
-    </div>
-    <div id="animation">
-      <img src="images/hourglass-solid.svg" alt="">
-    </div>
-    <footer>
-      <div>
-        <a href="https://github.com/bacalj/netlify-auth-sanity-data"><img src="images/github.svg" alt=""></a>
-      </div>
-      <div>
-        <a href="https://mobile.twitter.com/joe_bacal"><img src="images/twitter.svg" alt=""></a>
-      </div>
-      <div class="sanity-link">
-        <a href="https://www.sanity.io/exchange/community/joebacal"><img src="images/sanityicon.png" alt=""></a>
-      </div>
-    </footer>
-  </div>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGVTWW56J7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-VGVTWW56J7');
-  </script>
-
-  
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+  <div data-netlify-identity-button>Login with Netlify Identity</div>
 </body>
 </html>
